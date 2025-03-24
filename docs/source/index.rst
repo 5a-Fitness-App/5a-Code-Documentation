@@ -12,6 +12,9 @@ FitFish Documentation
    setup
    components
 
+   
+.. toctree::
+   :maxdepth: 2
    :caption: Introduction
    introduction
    requirements 
