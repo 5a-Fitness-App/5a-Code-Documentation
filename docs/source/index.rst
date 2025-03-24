@@ -8,8 +8,11 @@ FitFish Documentation
    :caption: Contents:
 
    scope
-   requirements 
    implementation
    setup
    components
+
+   :caption: Introduction
+   introduction
+   requirements 
    
