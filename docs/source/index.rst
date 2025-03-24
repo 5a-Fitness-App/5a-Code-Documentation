@@ -8,7 +8,7 @@ FitFish Documentation
    :caption: Contents:
 
    scope
-   requirments 
+   Requirements 
    implementation
    setup
    components
