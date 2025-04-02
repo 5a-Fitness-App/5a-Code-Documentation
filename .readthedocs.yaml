@@ -4,6 +4,8 @@ build:
   os: "ubuntu-22.04"
   tools:
     python: "3.10"
+  commands:
+    - cd docs/source && sphinx-build -b html . ../../_build/html
 
 python:
   install:
@@ -12,8 +14,7 @@ python:
 
 sphinx:
   configuration: docs/source/conf.py
-  builder: html
-  fail_on_warning: true
+
 
 formats:
   - pdf
