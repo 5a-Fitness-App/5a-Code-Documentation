@@ -13,7 +13,6 @@ Welcome to the official documentation for the FitFish app.
    requirements 
    scope
    implementation 
-   home_page
    components
    
 
