@@ -33,7 +33,12 @@ templates_path = ['_templates']
 
 # Path to static files
 
-html_logo = '_static/Logo.png'
+# html_logo = '_static/Logo.png'
+
+html_context = {
+    "display_github": False,
+}
+
 
 html_static_path = ['_static']
 
@@ -42,7 +47,14 @@ html_theme = 'sphinx_rtd_theme'
 html_theme_options = {
     'logo_only': True,
     'display_version': False,
-    'collapse_navigation': False,
+}
+
+html_sidebars = {
+    '**': [
+        'globaltoc.html',
+        'relations.html',
+        'searchbox.html',
+    ]
 }
 
 def setup(app):
