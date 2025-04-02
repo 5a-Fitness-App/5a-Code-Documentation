@@ -1,0 +1,21 @@
+
+.wy-side-nav-search .wy-logo {
+    max-height: 80px;
+    display: block;
+    margin: 0 auto;
+  }
+  
+.wy-side-nav-search {
+    position: relative;
+    padding-bottom: 20px;
+  }
+  
+.wy-side-nav-search::after {
+    content: "FitFish";
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    margin-top: 10px;
+  }
