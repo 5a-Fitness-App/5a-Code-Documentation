@@ -8,8 +8,7 @@ build:
 python:
   install:
     - requirements: docs/requirements.txt
-    - pip: 
-        - sphinx-rtd-theme 
+
 
 sphinx:
   configuration: docs/source/conf.py
