@@ -33,7 +33,7 @@ templates_path = ['_templates']
 
 # Path to static files
 
-release = 'Your Subtitle Text Here'
+
 
 html_logo = '_static/Logo.png'
 
