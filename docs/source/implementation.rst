@@ -5,7 +5,7 @@ FitFish is built using:
 
 - **Flutter** for cross-platform mobile development (Android/iOS)
 - **Dart** as the main programming language
--  for backend services (authentication, Firestore database)
+-  for backend services (authentication, PostgreSQL database)
 - 
 - 
 
