@@ -33,7 +33,7 @@ templates_path = ['_templates']
 
 # Path to static files
 
-# html_logo = '_static/Logo.png'
+html_logo = '_static/Logo.png'
 
 html_context = {
     "display_github": False,
@@ -49,13 +49,13 @@ html_theme_options = {
     'display_version': False,
 }
 
-html_sidebars = {
-    '**': [
-        'globaltoc.html',
-        'relations.html',
-        'searchbox.html',
-    ]
-}
+#html_sidebars = {
+ #   '**': [
+ #       'globaltoc.html',
+ #       'relations.html',
+ #       'searchbox.html',
+ #  ]
+#}
 
 def setup(app):
     app.add_css_file("custom.css")
