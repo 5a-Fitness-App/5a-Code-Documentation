@@ -1,5 +1,5 @@
 /* Resize the logo in the sidebar */
-.wy-side-nav-search .wy-logo {
+.wy-side-nav-search .wy-Logo {
     max-height: 60px; /* adjust size as needed */
     width: auto;
   }
