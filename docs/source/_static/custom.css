@@ -1,0 +1,5 @@
+/* Resize the logo in the sidebar */
+.wy-side-nav-search .wy-logo {
+    max-height: 80px; /* adjust size as needed */
+    width: auto;
+  }
