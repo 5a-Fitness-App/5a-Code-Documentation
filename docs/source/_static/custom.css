@@ -1,16 +1,17 @@
-/* Resize the logo in the sidebar */
-.wy-side-nav-search .wy-Logo {
-    max-height: 60px; /* adjust size as needed */
-    width: auto;
+/* Resize logo */
+.wy-side-nav-search .wy-logo {
+    max-height: 80px;
+    display: block;
+    margin: 0 auto;
   }
-
-  /* Add FitFish label below logo */
-.wy-side-nav-search::after {
+  
+  /* Add "FitFish" label under the logo */
+  .wy-side-nav-search::after {
     content: "FitFish";
     display: block;
     text-align: center;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
+    color: #ffffff;  /* change to match your brand color if needed */
     margin-top: 10px;
-    color: #ffffff; /* adjust if needed */
   }
