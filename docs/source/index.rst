@@ -8,10 +8,10 @@ FitFish Documentation
    :caption: Contents:
    
    introduction
+   setup
    requirements 
    scope
+   implementation 
    home_page
-   implementation
-   setup
    components
    
