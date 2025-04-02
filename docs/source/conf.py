@@ -33,7 +33,7 @@ templates_path = ['_templates']
 
 # Path to static files
 
-html_logo = '_static/logo.png'
+html_logo = '_static/Logo.png'
 
 html_static_path = ['_static']
 
