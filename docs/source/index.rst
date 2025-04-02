@@ -1,3 +1,9 @@
+.. image:: _static/logo.png
+   :width: 200px
+   :align center 
+   
+
+
 FitFish Documentation
 ===================================
 
