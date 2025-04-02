@@ -4,6 +4,11 @@
     display: block;
     margin: 0 auto;
   }
+
+.wy-side-nav-search {
+    position: relative;
+    padding-bottom: 20px;
+  }
   
   /* Add "FitFish" label under the logo */
   .wy-side-nav-search::after {
