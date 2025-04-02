@@ -1,17 +1,19 @@
 .. image:: _static/logo.png
    :width: 200px
-   :align center 
-   
+
+**FitFish App Documentation**
+
+
 
 
 FitFish Documentation
 ===================================
 
-
+Welcome to the official documentation for the FitFish app.
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :caption: Project Overview
    
    introduction
    setup
@@ -22,11 +24,20 @@ FitFish Documentation
    components
    
 
+.. toctree::
+   :maxdepth: 2
+   :caption: Frontend
+
+
    frontend/home_page
    frontend/log_workout_page
    frontend/profile_page
    frontend/login_screen
 
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Backend
 
    backend/connect_database
    backend/user_data
