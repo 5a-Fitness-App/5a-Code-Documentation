@@ -1,10 +1,3 @@
-.. image:: _static/logo.png
-   :width: 200px
-
-**FitFish App Documentation**
-
-
-
 
 FitFish Documentation
 ===================================
