@@ -29,14 +29,13 @@ templates_path = ['_templates']
 
 # -- Options for HTML output
 
-html_theme = 'sphinx_rtd_theme'
 
 
 # Path to static files
 
-html_static_path = ['_static']
-
 html_logo = '_static/logo.png'
+html_static_path = ['_static']
+html_theme = 'sphinx_rtd_theme'
 html_theme_options = {
     'logo_only': True,
     'display_version': False,
