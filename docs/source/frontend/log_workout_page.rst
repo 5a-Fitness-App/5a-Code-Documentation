@@ -19,7 +19,7 @@ Functionality
 - Calls `createWorkout()` from the backend.
 - Displays confirmation message or error feedback.
 
-To-Do
+How it works
 -----
 
 - Add activity types

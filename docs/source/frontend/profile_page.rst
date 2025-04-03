@@ -10,7 +10,7 @@ Displays user information, including:
 - Achievement badges
 - Summary stats
 
-To-Do
+How it works
 -----
 
 - Fetch user data from backend (`getUserById`)

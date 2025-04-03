@@ -11,7 +11,7 @@ Current Status
 - Placeholder for login form
 - Input fields for email and password
 
-To-Do
+How it works
 -----
 
 - Connect to backend auth system

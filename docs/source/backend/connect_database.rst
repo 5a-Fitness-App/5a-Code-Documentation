@@ -15,7 +15,7 @@ Key Functions
 - `updateUser(...)`
 - `deleteWorkout(...)`
 
-To-Do
+How it works
 -----
 
 - Add streak calculation
