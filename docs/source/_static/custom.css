@@ -1,15 +1,12 @@
-.wy-side-nav-search .wy-Logo {
+/* Center and size the logo */
+.wy-side-nav-search .wy-logo {
     max-height: 80px;
     display: block;
     margin: 0 auto;
   }
   
-.wy-side-nav-search {
-    position: relative;
-    padding-bottom: 20px;
-  }
-  
-.wy-side-nav-search::after {
+  /* Add "FitFish" below the logo */
+  .wy-side-nav-search::after {
     content: "FitFish";
     display: block;
     text-align: center;
@@ -17,4 +14,43 @@
     font-weight: bold;
     color: #ffffff;
     margin-top: 10px;
+  }
+  
+  /* Blue sidebar background */
+  .wy-nav-side {
+    background-color: #1a73e8 !important;
+  }
+  
+  /* Blue header background */
+  .wy-side-nav-search {
+    background-color: #1a73e8 !important;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #0b57d0;
+  }
+  
+  /* Sidebar scroll area (optional light tweak) */
+  .wy-side-scroll {
+    background-color: #1a73e8 !important;
+  }
+  
+  /* Sidebar links - white */
+  .wy-menu-vertical a {
+    color: white !important;
+  }
+  
+  /* Hover effect on links */
+  .wy-menu-vertical a:hover {
+    background-color: #1565c0 !important;
+    color: #ffffff !important;
+  }
+  
+  /* Active link style */
+  .wy-menu-vertical li.current > a {
+    background-color: #0b57d0 !important;
+    color: #ffffff !important;
+  }
+  
+  /* Expand content width */
+  .wy-nav-content {
+    max-width: 100% !important;
   }
