@@ -1,7 +1,7 @@
 Introduction
 ============
 
-This is an app that allows users to see friends workouts.
+This is an app that allows users to see friends workouts
 
 In this chapter we explore the user requirements and the elicitation process that took place to ensure our application incorporates features mentioned by our target users. 
 
