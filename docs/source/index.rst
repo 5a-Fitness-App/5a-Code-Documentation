@@ -9,6 +9,7 @@ Welcome to the official documentation for the FitFish app.
    :caption: Project Overview
    
    overview/introduction
+   This is an app that allows users to see friends workouts.
    overview/setup
    overview/requirements 
    overview/scope
