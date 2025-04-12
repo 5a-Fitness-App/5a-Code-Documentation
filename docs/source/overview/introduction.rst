@@ -41,6 +41,7 @@ How to clone and install the project
 How to set up dependencies
 
 Quick Start Guide
+=====
 
 Example: run the app on emulator or device with test data
 
@@ -51,6 +52,7 @@ Backend/server setup (if applicable)
 Environment variable configuration
 
 Usage
+=====
 Basic usage instructions (e.g., how to create a workout)
 
 Common use cases or workflows
@@ -62,6 +64,7 @@ Optional parameters or settings
 Screenshots or demo videos (optional but helpful)
 
 Configuration
+=====
 Configuration files (e.g., .env, config.yaml)
 
 Environment variables
@@ -77,11 +80,9 @@ Input parameters and return values
 
 Exceptions or error handling
 
-Example usage
-
-Auto-generated API docs (e.g., Sphinx)
 
 Testing
+=====
 How to run tests
 
 Testing framework used (e.g., flutter_test)
@@ -93,32 +94,7 @@ Writing and adding new tests
 Test coverage reports (if available)
 
 Deployment
-Supported environments (e.g., development, staging, production)
-
-Manual deployment instructions or CI/CD setup
-
-Docker configuration (if applicable)
-
+=====
 Hosting requirements (e.g., PostgreSQL, Firebase)
 
-Troubleshooting tips
 
-Contributing
-Code of Conduct
-
-How to report issues
-
-How to submit pull requests
-
-Code style and formatting rules
-
-Setting up a development environment
-
-Branching strategy (e.g., GitFlow)
-
-Security (Optional)
-Known vulnerabilities
-
-How to report a security issue
-
-Security best practices followed in the project
