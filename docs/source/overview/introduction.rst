@@ -8,11 +8,11 @@ To ensure our application aligns with the needs of our target users, we carried 
 
 Elicitation Methods
 ======
-We used a combination of the following methods:
-
 User Interviews: We had conducted interviews with fitness enthusiasts, asking them what they would want from an mobile application for posting workouts to their friends. 
-
 Our app's main focus is to allow users to post their workouts for friends to see, maintaing motivation to keep going to the gym and a active lifestyle.
+
+
+
 
 
 Key features / goals
