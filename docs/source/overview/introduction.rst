@@ -3,11 +3,11 @@ Introduction
 This app is a workout/fitness platform where users can dynamicly build workouts and post them to their friends feeds.
 
 Requirements Gathering
-============
+=======
 To ensure our application aligns with the needs of our target users, we carried out a structured requirements elicitation process. This helped us gather insights directly from potential users and shape the feature set around their actual goals and preferences.
 
 Elicitation Methods
-============
+======
 We used a combination of the following methods:
 
 User Interviews: We had conducted interviews with fitness enthusiasts, asking them what they would want from an mobile application for posting workouts to their friends. 
