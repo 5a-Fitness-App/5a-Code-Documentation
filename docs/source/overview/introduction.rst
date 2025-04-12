@@ -1,21 +1,31 @@
 Introduction
 ============
+This app is a workout/fitness platform where users can dynamicly build workouts and post them to their friends feeds.
 
-In this chapter we explore the user requirements and the elicitation process that took place to ensure our application incorporates features mentioned by our target users. 
+Requirements Gathering
+To ensure our application aligns with the needs of our target users, we carried out a structured requirements elicitation process. This helped us gather insights directly from potential users and shape the feature set around their actual goals and preferences.
 
-Our app's main focus is to allow users to log their exercises and calorie intakes (depending on personal preferences) and set personal daily goals to maintain an active lifestyle.
+Elicitation Methods
+We used a combination of the following methods:
 
+User Interviews: We had conducted interviews with fitness enthusiasts, asking them what they would want from an mobile application for posting workouts to their friends. 
 
-Project Overview
-Project name and description
+Our app's main focus is to allow users to post their workouts for friends to see, maintaing motivation to keep going to the gym and a active lifestyle.
 
-Purpose of the project
 
 Key features / goals
+Custom Activity Logging
+Users can add any type of activity they’ve completed in the gym — whether it’s weightlifting, cardio, yoga or meditation.
 
-Link to the source code repository
+Dynamic Workout Creation
+Activities can be grouped into a personalized workout session, allowing users to build their own structured workouts.
 
-Status (e.g., alpha, beta, stable)
+Social Workout Sharing
+Once a workout is created, it can be posted to the user’s feed, making it visible to all their friends on the platform.
+
+Friend Feed Interaction (optional to include)
+Users can view, like, and comment on friends’ workouts to encourage engagement and motivation.
+
 
 Getting Started
 Prerequisites (language versions, dependencies)
