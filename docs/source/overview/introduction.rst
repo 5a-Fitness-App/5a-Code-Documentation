@@ -13,9 +13,8 @@ Our app's main focus is to allow users to post their workouts for friends to see
 
 
 
-
-
-Key features / goals
+Key features 
+==========
 Custom Activity Logging
 Users can add any type of activity they’ve completed in the gym — whether it’s weightlifting, cardio, yoga or meditation.
 
