@@ -3,7 +3,6 @@ Setup & Installation
 
 To run FitFish locally:
 
-1. 
 Getting Started
 =====================
 
