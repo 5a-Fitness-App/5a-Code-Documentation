@@ -5,9 +5,9 @@ To run FitFish locally:
 
 1. 
 Getting Started
-=====
+==========
 Prerequisites: 
-===
+==============
 
 Flutter and Dart versions
 
