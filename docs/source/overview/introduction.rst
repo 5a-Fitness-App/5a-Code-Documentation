@@ -2,19 +2,6 @@ Introduction
 =====
 This app is a workout and fitness platform where users can dynamically build workouts and post them to their friends' feeds. It aims to promote motivation, consistency, and social engagement in fitness routines.
 
-Getting Started
-=====
-Prerequisites: 
-
-Flutter and Dart versions
-
-Any required SDKs or database dependencies
-
-Installation Instructions:
-
-How to clone and install the project
-
-How to set up dependencies
 
 Quick Start Guide
 =====
