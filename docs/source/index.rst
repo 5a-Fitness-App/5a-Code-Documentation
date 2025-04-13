@@ -8,12 +8,13 @@ Welcome to the official documentation for the FitFish app.
    :maxdepth: 2
    :caption: Project Overview
    
-   overview/introduction
-   overview/setup
-   overview/requirements 
-   overview/scope
-   overview/implementation 
-   overview/components
+   overview/Introduction
+   overview/Setup
+   overview/Requirements 
+   overview/Scope
+   overview/Implementation 
+   overview/Components
+   overview/Testing
    
 
 .. toctree::
