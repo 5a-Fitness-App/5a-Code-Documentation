@@ -1,21 +1,34 @@
 Main Components
-================
+===============
 
-**Authentication Module**
-- Email/Password sign in using  Auth
+This section outlines the core modules of the application and their responsibilities.
 
-**Workout Tracker**
-- Log workout type, duration, and notes
-- Save to 
+Authentication Module
+----------------------
+- Provides user authentication using email and password.
+- Built with database authentication.
+- Handles user registration, login, logout, and session management.
 
-**N/A**
-- Shows logged workouts in a monthly view
-- Uses  
+Workout Tracker
+---------------
+- Allows users to log workout entries including:
+  - Type of activity (strength, cardio, yoga or meditation)
+  - Duration or repetitions
+  - Optional notes
+- Workouts can be grouped into a single session and saved to the user’s account.
+- Data is stored securely in the database.
 
-**Progress Screen**
-- Line charts showing workout frequency or duration over time
-- Built with 
+Workout Post View
+----------------------
+- Displays a listview of all friends logged workouts with the most recently posted at the top.
+- Each workout entry can be tapped to view more details.
+- Helps users track consistency and feel the more competitive with their friends.
 
-**Settings/Profile**
-- Update profile
-- Logout
+Profile View
+-------------------
+- Allows users to update personal information:
+  - Display name
+  - Profile picture 
+  - Goals achieved
+- Provides logout functionality.
+
