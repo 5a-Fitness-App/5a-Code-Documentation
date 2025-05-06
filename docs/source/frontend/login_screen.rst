@@ -8,7 +8,10 @@ Overview:
 This screen is used to authenticate credentials when signing in. 
 It is the main screen when you open the app and are required to either sign up or sign in.
 
-
+.. image:: _static/login_screen_sign_in.png
+   :width: 400px
+   :alt: FitFish Login Screen
+   :align: center
 
 
 
