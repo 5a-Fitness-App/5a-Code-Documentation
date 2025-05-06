@@ -5,10 +5,10 @@ Profile Page
 
 Displays user information, including:
 
-- Username and avatar
-- Streak data
-- Achievement badges
-- Summary stats
+- Username and user profile photo
+- Number of friends 
+    - When this text is clicked, the friends modal is shown
+- User biography
 
 How it works
 -----

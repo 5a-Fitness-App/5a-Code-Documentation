@@ -8,15 +8,22 @@ This screen allows users to input workout data like title, duration, and calorie
 Fields
 ------
 
-- Workout Title
-- Duration (minutes)
-- Calories Burned
+- Workout caption
+- Activities: which can have the following fields depending on the exercise
+    - Duration (hours, minutes, seconds)
+    - Incline
+    - Distance (miles or km)
+    - Weight (kg or lbs)
+    - Sets
+    - Reps
+    - All activties have a 'notes' field
 
 Functionality
 -------------
 
-- Validates form inputs.
-- Calls `createWorkout()` from the backend.
+- Validates distance, weight and incline are all valid decimal/floating numbers in the input field
+- Validates sets and reps are valid integers in the input field
+- Calls `addNewWorkout()` from the backend/api.dart
 - Displays confirmation message or error feedback.
 
 How it works
