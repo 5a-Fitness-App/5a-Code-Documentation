@@ -10,10 +10,7 @@ It is the main screen when you open the app and are required to either sign up o
 
 docs/source/_static/login_screen_sign_in 2.jpg
 
-.. image:: docs/source/_static/login_screen_sign_in 2.jpg
-   :width: 400px
-   :alt: FitFish Login Screen
-   :align: center
+
 
 Current Status
 --------------
