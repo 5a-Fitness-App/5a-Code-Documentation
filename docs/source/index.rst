@@ -3,7 +3,7 @@ FitFish Documentation
 
 Welcome to the official documentation for the FitFish app.
 
-.. figure:: _static/login_screen_sign_in.png
+.. figure:: docs/source/_static/login_screen_sign_in.png 
    :width: 300px
    :alt: FitFish Login Screen
    :align: center
