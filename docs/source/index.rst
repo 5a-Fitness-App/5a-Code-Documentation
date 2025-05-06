@@ -1,8 +1,16 @@
-
 FitFish Documentation
 ===================================
 
 Welcome to the official documentation for the FitFish app.
+
+.. figure:: _static/login_screen_sign_in.png
+   :width: 300px
+   :alt: FitFish Login Screen
+   :align: center
+
+   **FitFish Login Screen**
+
+----
 
 .. toctree::
    :maxdepth: 2
@@ -15,18 +23,15 @@ Welcome to the official documentation for the FitFish app.
    overview/Implementation 
    overview/Components
    overview/Testing
-   
 
 .. toctree::
    :maxdepth: 2
    :caption: Frontend
 
-
    frontend/home_page
    frontend/log_workout_page
    frontend/profile_page
    frontend/login_screen
-
 
 .. toctree::
    :maxdepth: 2
