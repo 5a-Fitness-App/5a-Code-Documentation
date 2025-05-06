@@ -1,7 +1,12 @@
 Login Screen
 ============
 
-**File:** `lib/login_screen.dart`
+**File:** `lib/frontend/states/login_screen.dart`
+
+Overview: 
+---------
+This screen is used to authenticate credentials when signing in. 
+It is the main screen when you open the app and are required to either sign up or sign in.
 
 Authentication UI for signing into the app.
 
