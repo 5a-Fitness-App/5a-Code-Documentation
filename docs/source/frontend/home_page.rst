@@ -30,7 +30,7 @@ How it works
     - located in api.dart is two functions....
 - Connect button actions to navigation and backend logic.
 
-Visiual Reference
+Image Reference
 ------------------
 .. image:: ../_static/home_page.png
    :width: 400px
