@@ -1,7 +1,7 @@
 Profile Page
 ============
 
-**File:** `lib/profile_page.dart`
+**File:** `flutter/lib/frontend/states/profile_page.dart`
 
 Displays user information, including:
 

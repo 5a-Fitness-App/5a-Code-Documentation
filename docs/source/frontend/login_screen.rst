@@ -1,7 +1,7 @@
 Login Screen
 ============
 
-**File:** `lib/frontend/states/login_screen.dart`
+**File:** `flutter/lib/frontend/states/login_screen.dart`
 
 Overview: 
 ---------

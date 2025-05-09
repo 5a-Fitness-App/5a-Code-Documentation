@@ -1,7 +1,7 @@
 Log Workout Page
 ================
 
-**File:** `lib/log_workout_page.dart`
+**File:** `flutter/lib/frontend/states/log_workout_page.dart`
 
 This screen allows users to input workout data like title, duration, and calories burned.
 
