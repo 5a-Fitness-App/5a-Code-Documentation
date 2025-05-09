@@ -7,7 +7,7 @@ The project repository can be found at:
 This document outlines how to set up, configure, and run the Fitness App locally.
 
 Setup
-=====
+---------
 
 System Requirements
 -------------------
