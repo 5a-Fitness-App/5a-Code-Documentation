@@ -14,7 +14,6 @@ Welcome to the official documentation for the FitFish app.
    :caption: Project Overview
    
    overview/Introduction
-   overview/Scope
    overview/Components
    overview/Requirements 
    overview/Implementation 
