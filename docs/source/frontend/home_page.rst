@@ -29,3 +29,10 @@ How it works
     - There are two methods of the provider to update the provider with the each of the lists
     - located in api.dart is two functions....
 - Connect button actions to navigation and backend logic.
+
+Visiual Reference
+------------------
+.. image:: ../_static/home_page.png
+   :width: 400px
+   :align: center
+

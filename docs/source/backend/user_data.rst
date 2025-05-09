@@ -1,7 +1,7 @@
 User Data Model
 ===============
 
-**File:** `lib/user_data.dart`
+**File:** `flutter/lib/backend/models/user.dart`
 
 Dart class that represents a user object.
 

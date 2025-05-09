@@ -1,7 +1,7 @@
 Database Connection
 ===================
 
-**File:** `lib/connect_database.dart`
+**File:** `flutter/lib/backend/services/db_service.dart`
 
 Manages PostgreSQL connection and executes queries.
 
