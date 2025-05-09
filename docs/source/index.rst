@@ -14,12 +14,13 @@ Welcome to the official documentation for the FitFish app.
    :caption: Project Overview
    
    overview/Introduction
-   overview/Setup
-   overview/Requirements 
    overview/Scope
-   overview/Implementation 
    overview/Components
+   overview/Requirements 
+   overview/Implementation 
    overview/Testing
+   overview/Setup
+
 
 .. toctree::
    :maxdepth: 2
