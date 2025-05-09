@@ -29,11 +29,12 @@ Welcome to the official documentation for the FitFish app.
    frontend/log_workout_page
    frontend/profile_page
    frontend/login_screen
+   frontend/friends_page
 
 .. toctree::
    :maxdepth: 2
    :caption: Backend
 
    backend/connect_database
+   backend/API_Logic
    backend/user_data
-   backend/sign_in_data
