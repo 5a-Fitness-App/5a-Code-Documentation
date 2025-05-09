@@ -31,3 +31,9 @@ How it works
 
 - Add activity types
 - Include date/time picker
+
+Visiual Reference
+------------------
+.. image:: ../_static/log_workout_modal.png
+   :width: 400px
+   :align: center

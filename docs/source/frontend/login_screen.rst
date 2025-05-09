@@ -26,3 +26,14 @@ How it works
 
 - Connect to backend auth system
 - Validate credentials using `sign_in_data.dart`
+
+Visiual Reference
+------------------
+.. image:: ../_static/login_screen_sign_in.png
+   :width: 400px
+   :align: center
+
+
+.. image:: ../_static/login_screen_registration2.png
+   :width: 400px
+   :align: center
