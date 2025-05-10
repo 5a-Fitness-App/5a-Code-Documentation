@@ -1,16 +1,34 @@
 
-Database Connection
-File: flutter/lib/backend/services/db_service.dart
+This file defines the Posts model used to manage and represent workout post data in the fitness app. It holds both the user's and their friends’ workouts, typically used in state management with Riverpod.
 
-Manages PostgreSQL connection and executes queries.
+Class: Posts
+Fields
+userWorkouts: List<Map<String, dynamic>> — Workouts created by the user.
 
-Key Functions
-createUser(...)
-getUsers() / getUserById()
-createWorkout(...)
-getWorkouts() / getWorkoutById()
-updateUser(...)
-deleteWorkout(...)
-How it works
-Add streak calculation
-Secure password hashing (already uses crypt(...))
+friendsWorkouts: List<Map<String, dynamic>> — Workouts from the user’s friends.
+
+Constructor
+dart
+Copy
+Edit
+Posts({
+  required this.userWorkouts,
+  required this.friendsWorkouts,
+});
+Method: copyWith
+Creates a modified copy of the Posts object, useful for immutable updates.
+
+dart
+Copy
+Edit
+Posts copyWith({
+  List<Map<String, dynamic>>? userWorkouts,
+  List<Map<String, dynamic>>? friendsWorkouts,
+});
+Example
+dart
+Copy
+Edit
+final updated = posts.copyWith(userWorkouts: newList);
+Purpose
+This model is used by the PostNotifier to manage and update workout post data shown in the app UI.
