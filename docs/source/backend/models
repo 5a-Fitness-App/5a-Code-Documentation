@@ -2,8 +2,6 @@ File: flutter/lib/backend/models/post.dart
 File: flutter/lib/backend/models/user.dart
 File: flutter/lib/backend/models/workout_dart.dart
 
-The models holds the classes 
-
 Components:
 Post class 
 
