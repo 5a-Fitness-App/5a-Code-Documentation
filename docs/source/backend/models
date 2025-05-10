@@ -1,1 +1,102 @@
+File: flutter/lib/backend/models/post.dart
+File: flutter/lib/backend/models/user.dart
+File: flutter/lib/backend/models/workout_dart.dart
 
+The models holds the classes 
+
+Components:
+Post class 
+Users class
+activityDraft class
+
+Activity Models
+===============
+
+This module defines the data models for workouts and activities in a fitness app.
+
+Weight Units
+------------
+
+.. enum:: WeightUnitsLabel
+
+   Represents supported weight units.
+
+   - **kg**: Kilograms
+   - **lb**: Pounds
+
+.. data:: entries
+
+   :type: List[DropdownMenuEntry[WeightUnitsLabel]]
+
+   A list of dropdown menu entries for selecting weight units.
+
+Distance Units
+--------------
+
+.. enum:: DistanceUnitsLabel
+
+   Represents supported distance units.
+
+   - **mi**: Miles
+   - **km**: Kilometers
+
+.. data:: entries
+
+   :type: List[DropdownMenuEntry[DistanceUnitsLabel]]
+
+   A list of dropdown menu entries for selecting distance units.
+
+ActivityDraft Class
+-------------------
+
+.. class:: ActivityDraft
+
+   Represents a draft of a single activity (e.g., a workout set or cardio run).
+
+   **Constructor Parameters**:
+
+   - **activityDraftID**: Unique ID for the draft.
+   - **exerciseType**: Type of exercise (e.g., Running, Squat).
+   - **metrics**: List of metrics associated with this activity.
+   - **notesController**: Text controller for notes.
+   - **setsController**, **repsController**, **hoursController**, etc.: Various `TextEditingController`s to capture user input.
+
+   **Optional Fields**:
+
+   - **selectedWeightUnit**: The unit selected for weight.
+   - **selectedDistanceUnit**: The unit selected for distance.
+
+   .. method:: copyWith({weightUnit, distanceUnit})
+
+      Creates a modified copy of the activity, replacing specified unit selections.
+
+   .. method:: toMap()
+
+      Converts the activity to a `Map<String, dynamic>` for serialization or database storage.
+
+WorkoutDraft Class
+------------------
+
+.. class:: WorkoutDraft
+
+   Represents a full workout composed of multiple `ActivityDraft` instances.
+
+   **Fields**:
+
+   - **activities**: List of `ActivityDraft` instances.
+   - **captionController**: Text controller for the workout caption.
+
+   .. method:: copyWith({activities})
+
+      Returns a modified copy of the workout.
+
+   .. method:: toMap()
+
+      Serializes the workout and all its activities into a map.
+
+How it works
+A post provider hold a two list of posts: one for the user, and one for the user's friends
+located in backend/providers/post_provider.dart
+There are two methods of the provider to update the provider with the each of the lists
+located in api.dart is two functions....
+Connect button actions to navigation and backend logic.
