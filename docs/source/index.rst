@@ -38,3 +38,5 @@ Welcome to the official documentation for the FitFish app.
    backend/connect_database
    backend/API_Logic
    backend/user_data
+   backend/models
+   backend/provider
