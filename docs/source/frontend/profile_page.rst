@@ -1,7 +1,7 @@
 Profile Page
 ============
 
-**File:** `lib/profile_page.dart`
+**File:** `flutter/lib/frontend/states/profile_page.dart`
 
 Displays user information, including:
 
@@ -16,3 +16,9 @@ How it works
 - Fetch user data from backend (`getUserById`)
 - Display earned achievements
 - Show friends list and user-specific activity
+
+Image Reference
+-----------------
+.. image:: ../_static/profile_page.png
+   :width: 400px
+   :align: center

@@ -1,0 +1,166 @@
+File: flutter/lib/backend/models/post.dart
+File: flutter/lib/backend/models/user.dart
+File: flutter/lib/backend/models/workout_dart.dart
+
+Components:
+Post class 
+
+Posts Model
+===========
+
+This model stores workout post data for the user and their friends. It is used for displaying the workout feed in the app.
+
+Posts Class
+-----------
+
+.. class:: Posts
+
+   Represents a collection of workout data split into user and friend categories.
+
+   **Constructor Parameters**:
+
+   - **userWorkouts** (*List[Map[String, dynamic]]*): A list of workouts posted by the user.
+   - **friendsWorkouts** (*List[Map[String, dynamic]]*): A list of workouts posted by the user's friends.
+
+   .. method:: copyWith(userWorkouts=None, friendsWorkouts=None)
+
+      Returns a new `Posts` object with optionally updated fields.
+
+      :param userWorkouts: (optional) A new list of user workouts.
+      :param friendsWorkouts: (optional) A new list of friends' workouts.
+
+
+Users class
+
+Defines the core representation of a user within the fitness application.
+
+User Class
+----------
+
+.. class:: User
+
+   Represents a registered user with personal and account-related information.
+
+   **Constructor Parameters**:
+
+   - **userID** (*int?*): Unique identifier for the user (optional).
+   - **userName** (*String*): Display name of the user. Defaults to an empty string.
+   - **userProfilePhoto** (*String*): File or identifier for the user's profile picture. Defaults to `'fish'`.
+   - **userBio** (*String?*): Optional user biography. Defaults to an empty string.
+   - **userDOB** (*DateTime*): User's date of birth (**required**).
+   - **userWeight** (*double*): User's weight in `userUnits`. Defaults to `0.0`.
+   - **userUnits** (*String*): Unit of weight measurement (e.g., `'kg'`, `'lb'`). Defaults to `'kg'`.
+   - **accountCreationDate** (*DateTime*): Timestamp when the account was created (**required**).
+   - **userEmail** (*String*): User’s email address. Defaults to an empty string.
+   - **friendCount** (*int*): Number of friends. Defaults to `0`.
+
+   .. method:: copyWith(...)
+
+      Creates a modified copy of the `User` instance. Only provided fields are replaced.
+
+      :param userID: (optional) New user ID
+      :param userName: (optional) New user name
+      :param userProfilePhoto: (optional) New profile photo
+      :param userBio: (optional) New bio
+      :param userDOB: (optional) New date of birth
+      :param userWeight: (optional) New weight
+      :param userUnits: (optional) New unit system
+      :param accountCreationDate: (optional) New account creation date
+      :param userEmail: (optional) New email
+      :param friendCount: (optional) New friend count
+
+
+
+activityDraft class
+
+Activity Models
+===============
+
+This module defines the data models for workouts and activities in a fitness app.
+
+Weight Units
+------------
+
+.. enum:: WeightUnitsLabel
+
+   Represents supported weight units.
+
+   - **kg**: Kilograms
+   - **lb**: Pounds
+
+.. data:: entries
+
+   :type: List[DropdownMenuEntry[WeightUnitsLabel]]
+
+   A list of dropdown menu entries for selecting weight units.
+
+Distance Units
+--------------
+
+.. enum:: DistanceUnitsLabel
+
+   Represents supported distance units.
+
+   - **mi**: Miles
+   - **km**: Kilometers
+
+.. data:: entries
+
+   :type: List[DropdownMenuEntry[DistanceUnitsLabel]]
+
+   A list of dropdown menu entries for selecting distance units.
+
+ActivityDraft Class
+-------------------
+
+.. class:: ActivityDraft
+
+   Represents a draft of a single activity (e.g., a workout set or cardio run).
+
+   **Constructor Parameters**:
+
+   - **activityDraftID**: Unique ID for the draft.
+   - **exerciseType**: Type of exercise (e.g., Running, Squat).
+   - **metrics**: List of metrics associated with this activity.
+   - **notesController**: Text controller for notes.
+   - **setsController**, **repsController**, **hoursController**, etc.: Various `TextEditingController`s to capture user input.
+
+   **Optional Fields**:
+
+   - **selectedWeightUnit**: The unit selected for weight.
+   - **selectedDistanceUnit**: The unit selected for distance.
+
+   .. method:: copyWith({weightUnit, distanceUnit})
+
+      Creates a modified copy of the activity, replacing specified unit selections.
+
+   .. method:: toMap()
+
+      Converts the activity to a `Map<String, dynamic>` for serialization or database storage.
+
+WorkoutDraft Class
+------------------
+
+.. class:: WorkoutDraft
+
+   Represents a full workout composed of multiple `ActivityDraft` instances.
+
+   **Fields**:
+
+   - **activities**: List of `ActivityDraft` instances.
+   - **captionController**: Text controller for the workout caption.
+
+   .. method:: copyWith({activities})
+
+      Returns a modified copy of the workout.
+
+   .. method:: toMap()
+
+      Serializes the workout and all its activities into a map.
+
+How it works
+A post provider hold a two list of posts: one for the user, and one for the user's friends
+located in backend/providers/post_provider.dart
+There are two methods of the provider to update the provider with the each of the lists
+located in api.dart is two functions....
+Connect button actions to navigation and backend logic.

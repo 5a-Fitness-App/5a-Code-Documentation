@@ -1,7 +1,7 @@
 Home Page
 =========
 
-**File:** `lib/home_page.dart`
+**File:** `flutter/lib/frontend/states/home_page.dart`
 
 The Home Page is the main page the user will enter after logging in/ signing up. 
 It will display the user's fitness progress, including daily streak goals, workout logging options, and recent activity posts from other users.
@@ -29,3 +29,10 @@ How it works
     - There are two methods of the provider to update the provider with the each of the lists
     - located in api.dart is two functions....
 - Connect button actions to navigation and backend logic.
+
+Image Reference
+------------------
+.. image:: ../_static/home_page.png
+   :width: 400px
+   :align: center
+

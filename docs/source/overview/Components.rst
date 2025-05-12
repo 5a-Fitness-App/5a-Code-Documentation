@@ -12,7 +12,7 @@ Authentication Module
 Workout Tracker
 ---------------
 - Allows users to log workout entries including:
-  - Type of activity (strength, cardio, yoga or meditation)
+  - Type of activity (strength, cardio, yoga or etc...)
   - Duration or repetitions
   - Optional notes
 - Workouts can be grouped into a single session and saved to the user’s account.
@@ -28,7 +28,7 @@ Profile View
 -------------------
 - Allows users to update personal information:
   - Display name
-  - Profile picture 
+  - Profile picture / Avatar
   - Goals achieved
 - Provides logout functionality.
 
