@@ -13,13 +13,13 @@ Components
     - If this section was fully functional: 
         - The Streak is updated daily as long as the user maintains their activity on the app
         - The Streak is lost when the user has not been active for more than 48hrs 
-        - The percentage would change
+        - The percentage would change according to how many daily achievements the user has completed out of the daily achievements that can be accomplished
 - **Log Workout:** Log workout button opens the log workout modal
     - Log workout screen takes the user to page where they can input their finished workout with details like duration, type and description of the workout. 
 - **Recent Activity Feed:** Dynamically displays friends and user workout posts .
     - At the center of the home page the user will be able to views their posts and their friends posts of recent workouts uploaded 
     - The user will also be able to interact with these posts with features like comments and likes.
-    - Refreshes with changes
+    - Refreshes with changes (such as when the user removes a friend or accepts a friend request)
 
 How it works
 -----
