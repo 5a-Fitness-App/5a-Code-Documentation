@@ -4,10 +4,6 @@ Login Screen
 **File:** `flutter/lib/frontend/states/login_screen.dart`
 
 
-.. contents:: Table of Contents
-   :local:
-   :depth: 2
-
 
 Overview: 
 ---------
@@ -16,82 +12,43 @@ It is the main screen when you open the app and are required to either sign up o
 
 
 
-UI Components
--------------
+Widget Hierarchy
+---------------
+- ``LoginScreen`` (ConsumerStatefulWidget)
+  - ``LoginScreenState`` (ConsumerState)
+    - Form (Sign In/Sign Up)
+    - Various form fields
+    - Profile image selectors
 
-Header Section
-^^^^^^^^^^^^^^
-- Displays the application logo and name "FitFish"
-- Features a gradient background from light blue to darker blue
+Exact Components from File
+-------------------------
 
-Form Toggle
-^^^^^^^^^^^
-- Two tab-style buttons for switching between "Sign In" and "Sign Up" modes
-- Visual indicator shows active form
+WeightUnitsLabel Enum
+^^^^^^^^^^^^^^^^^^^^
+.. list-table::
+   :widths: 30 70
+   :header-rows: 1
 
-Authentication Forms
-^^^^^^^^^^^^^^^^^^^
-
-Sign In Form
-~~~~~~~~~~~~
-.. figure:: /_static/login_form.png
-   :width: 300
-   :align: center
-   :alt: Sign In Form
-
-   The login form with email and password fields.
-
-Fields:
-- **Email**: Validates email format
-- **Password**: Includes visibility toggle
-
-Sign Up Form
-~~~~~~~~~~~~
-.. figure:: /_static/register_form.png
-   :width: 300
-   :align: center
-   :alt: Sign Up Form
-
-   The registration form with additional fields.
-
-Fields:
-- Profile image selection (fish, shark, crab, dolphin)
-- Username
-- Email
-- Password (with confirmation)
-- Birthday (date picker)
-- Weight (with kg/lb selector)
-
-API Reference
--------------
+   * - Value
+     - Label
+   * - kg
+     - "kg"
+   * - lb
+     - "lb"
 
 LoginScreen Class
-^^^^^^^^^^^^^^^^^
-.. autoclass:: LoginScreen
-   :members:
-   :exclude-members: build, createState
-
-Properties
-~~~~~~~~~~
+^^^^^^^^^^^^^^^^
 .. list-table::
-   :widths: 20 30 50
+   :widths: 30 70
    :header-rows: 1
 
-   * - Name
-     - Type
+   * - Property
      - Description
    * - registerOverride
-     - Function?
-     - Optional registration function override for testing
+     - Optional function override for registration
 
-LoginScreenState Class
-^^^^^^^^^^^^^^^^^^^^^
-.. autoclass:: LoginScreenState
-   :members:
-   :exclude-members: build
-
-State Properties
-~~~~~~~~~~~~~~~~
+LoginScreenState Properties
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. list-table::
    :widths: 20 30 50
    :header-rows: 1
@@ -99,32 +56,95 @@ State Properties
    * - Name
      - Type
      - Description
-   * - registrationMode
-     - bool
-     - Toggles between login/registration views
-   * - hidePassword
-     - bool
-     - Controls password visibility
+   * - signUpFormKey
+     - GlobalKey<FormState>
+     - Form validation key
+   * - emailController
+     - TextEditingController
+     - Email input controller
    * - selectedProfileImage
      - String
-     - Currently selected profile avatar
-   * - selectedWeightUnit
-     - WeightUnitsLabel?
-     - Selected weight measurement unit
+     - Currently selected image (default: 'fish')
+   * - registrationMode
+     - bool
+     - Toggles between forms (default: false)
 
-Methods
-~~~~~~~
-.. automethod:: LoginScreenState.login
-.. automethod:: LoginScreenState.registerButton
-.. automethod:: LoginScreenState._selectDate
-.. automethod:: LoginScreenState._selectImage
+Exact Methods from File
+^^^^^^^^^^^^^^^^^^^^^^^
+.. list-table::
+   :widths: 25 75
+   :header-rows: 1
 
-Enums
------
-WeightUnitsLabel
-^^^^^^^^^^^^^^^^
-.. autoclass:: WeightUnitsLabel
-   :members:
+   * - Method
+     - Description
+   * - _selectImage()
+     - Sets profile image
+   * - _selectDate()
+     - Shows date picker
+   * - login()
+     - Handles sign-in
+   * - registerButton()
+     - Handles registration
+   * - buildSignInForm()
+     - Returns login form widget
+   * - buildSignUpForm()
+     - Returns registration form widget
+
+Form Validation (Exact Rules from File)
+--------------------------------------
+
+Sign In Form
+^^^^^^^^^^^^
+.. list-table::
+   :widths: 30 70
+   :header-rows: 1
+
+   * - Field
+     - Validation
+   * - Email
+     | - Required
+     | - Must match regex:
+     |   ``r'^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$'``
+   * - Password
+     - Required
+
+Sign Up Form
+^^^^^^^^^^^^
+.. list-table::
+   :widths: 30 70
+   :header-rows: 1
+
+   * - Field
+     - Validation
+   * - Username
+     | - Required
+     | - Regex: ``r'^[a-zA-Z0-9._-]+$'``
+   * - Email
+     | - Same as login
+   * - Password
+     - Required
+   * - Confirm Password
+     - Must match password
+   * - Weight
+     | - Required
+     | - Valid decimal (regex: ``r'^\d*\.?\d*$'``)
+
+UI Structure (From build() method)
+---------------------------------
+1. Gradient header with logo
+2. Form toggle buttons
+3. Dynamic form area showing either:
+   - Sign In form (email + password)
+   - Sign Up form (all fields + profile images)
+
+Image Assets Used
+----------------
+From ``assets/`` directory:
+- Logo.png
+- fish.png
+- shark.png
+- crab.png
+- dolphin.png
 
 Validation Rules
 ---------------
@@ -147,26 +167,3 @@ Validation Rules
 |                | - Must be in past                             |
 +----------------+-----------------------------------------------+
 
-Error States
-------------
-.. list-table::
-   :widths: 30 70
-   :header-rows: 1
-
-   * - Error Case
-     - User Feedback
-   * - Invalid email
-     - "Enter a valid email address"
-   * - Existing account
-     - "An account with this email already exists"
-   * - Password mismatch
-     - "Passwords do not match"
-   * - Invalid credentials
-     - "Login failed. Please check your credentials"
-
-
-
-See Also
---------
-:ref:`friends-page` - The social connections interface
-:ref:`user-profile` - User profile management screen
