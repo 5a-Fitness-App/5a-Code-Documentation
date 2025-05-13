@@ -150,7 +150,7 @@ Validation Rules
 
 Image References
 -----------------
-.. image:: ../_static/login_screen_registration.png
+.. image:: ../_static/login_screen_registration2.png
    :width: 400px
    :align: center
 

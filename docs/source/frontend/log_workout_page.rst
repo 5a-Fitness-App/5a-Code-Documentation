@@ -1,49 +1,84 @@
+.. _log-workout-modal:
+
+
 Log Workout Page
 ================
 
-**File:** `flutter/lib/frontend/states/log_workout_page.dart`
+Source File: ``flutter/lib/frontend/modals/log_workout_modal.dart``
 
 This screen allows users to input workout data like title, duration, and calories burned.
 
-Fields
-------
-
-- Workout caption
-- Activities: which can have the following fields depending on the exercise
-    - Duration (hours, minutes, seconds)
-    - Incline
-    - Distance (miles or km)
-    - Weight (kg or lbs)
-    - Sets
-    - Reps
-    - All activties have a 'notes' field
+Overview
+--------
+This screen allows users to input workout data like title, duration, and specific metrics.
 
 
 Components
-------------
+----------
 
-Widget
-^^^^^^^^^^^^^^^^^^
-Properties
-~~~~~~~~~~~~~~~~~~~~
-State Management
-~~~~~~~~~~~~~~~~~~~~
-Key Features
-~~~~~~~~~~~~~~~~~~~~
+ExerciseTypeLabel Enum
+^^^^^^^^^^^^^^^^^^^^^
+Contains 50+ exercise types categorized by:
+- Legs (12)
+- Glutes (3) 
+- Chest (5)
+- Back (9)
+- Shoulders (7)
+- Arms (9)
+- Core (8)
+- Cardio (7)
 
-Functionality
+Each specifies required metrics:
+- ``sets``, ``reps``, ``weight``
+- ``time`` (HH/MM/SS)
+- ``distance``, ``speed``, ``incline``
+
+LogWorkoutPage
+^^^^^^^^^^^^^^
+**Elements:**
+1. Header with Cancel/Post buttons
+2. Caption text area
+3. Activities list
+4. Add activity controls
+
+**Methods:**
+- ``postWorkout()`` - Submits to backend
+- Handles activity management
+
+ActivityWidget
+^^^^^^^^^^^^^
+**Displays:**
+- Exercise name
+- Dynamic fields based on metrics
+- Notes field
+- Delete button
+
+**Validation:**
+- Numeric fields (weight/distance)
+- Time format (HH/MM/SS)
+- Required fields
+
+Data Structure
 -------------
+**ActivityDraft contains:**
+- exerciseType (String)
+- metrics (List<String>)
+- Controllers for all fields
+- Weight/distance units
 
-- Validates distance, weight and incline are all valid decimal/floating numbers in the input field
-- Validates sets and reps are valid integers in the input field
-- Calls `addNewWorkout()` from the backend/api.dart
-- Displays confirmation message or error feedback.
+State Management
+---------------
+- Uses ``workoutDraftNotifier``
+- Manages activities list
+- Handles unit selections
 
-How it works
------
+Interactions
+-----------
+1. Add activities via dropdown
+2. Fill exercise-specific metrics
+3. Add notes
+4. Post or cancel
 
-- Add activity types
-- Include date/time picker
 
 Image Reference
 ------------------

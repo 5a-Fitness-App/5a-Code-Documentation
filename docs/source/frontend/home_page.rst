@@ -1,53 +1,188 @@
+.. _home-page:
+
+
 Home Page
 =========
 
-**File:** `flutter/lib/frontend/states/home_page.dart`
+Source File:  ``flutter/lib/frontend/states/home_page.dart``
 
 The Home Page is the main page the user will enter after logging in/ signing up. 
 It will display the user's fitness progress, including daily streak goals, workout logging options, and recent activity posts from other users.
 
+
+Overview
+--------
+The Home Page is the main page the user will enter after logging in/ signing up. 
+It will display the user's fitness progress, including daily streak goals, workout logging options, and recent activity posts from other users.
+
+
+Widget Hierarchy
+---------------
+- ``HomePage`` (ConsumerStatefulWidget)
+  - ``_HomePageState`` (ConsumerState)
+    - ``_buildStreakBanner()``
+    - ``FriendsPosts`` (ConsumerWidget)
+
 Components
 ----------
-Widget
-^^^^^^^^^^^^^^^^^^
-Properties
-~~~~~~~~~~~~~~~~~~~~
-State Management
-~~~~~~~~~~~~~~~~~~~~
-Key Features
-~~~~~~~~~~~~~~~~~~~~
-Widget
-^^^^^^^^^^^^^^^^^^
-Properties
-~~~~~~~~~~~~~~~~~~~~
-State Management
-~~~~~~~~~~~~~~~~~~~~
-Key Features
-~~~~~~~~~~~~~~~~~~~~
-- **Streak Section (Hard Coded):** Displays a circular progress indicator at the top of the page, showing the percentage of daily goals met using `CircularPercentIndicator`.
-    - If this section was fully functional: 
-        - The Streak is updated daily as long as the user maintains their activity on the app
-        - The Streak is lost when the user has not been active for more than 48hrs 
-        - The percentage would change according to how many daily achievements the user has completed out of the daily achievements that can be accomplished
-- **Log Workout:** Log workout button opens the log workout modal
-    - Log workout screen takes the user to page where they can input their finished workout with details like duration, type and description of the workout. 
-- **Recent Activity Feed:** Dynamically displays friends and user workout posts .
-    - At the center of the home page the user will be able to views their posts and their friends posts of recent workouts uploaded 
-    - The user will also be able to interact with these posts with features like comments and likes.
-    - Refreshes with changes (such as when the user removes a friend or accepts a friend request)
 
-How it works
------
+HomePage Class
+^^^^^^^^^^^^^^
+.. list-table::
+   :widths: 30 70
+   :header-rows: 1
 
-- A post provider hold a two list of posts: one for the user, and one for the user's friends
-    - located in backend/providers/post_provider.dart
-    - There are two methods of the provider to update the provider with the each of the lists
-    - located in api.dart is two functions....
-- Connect button actions to navigation and backend logic.
+   * - Property
+     - Description
+   * - key
+     - Standard Flutter widget key
+
+HomePageState Methods
+^^^^^^^^^^^^^^^^^^^^
+.. list-table::
+   :widths: 25 75
+   :header-rows: 1
+
+   * - Method
+     - Description
+   * - initState()
+     - Loads friends' workouts on initialization
+   * - openLogWorkoutModal()
+     - Shows workout logging bottom sheet
+   * - _buildStreakBanner()
+     - Builds the top progress display
+
+FriendsPosts Widget
+^^^^^^^^^^^^^^^^^^
+.. list-table::
+   :widths: 20 30 50
+   :header-rows: 1
+
+   * - Property
+     - Description
+   * - workouts
+     - List<Map<String,dynamic>>
+     - Friends' workout data to display
+   * - key
+     - Standard Flutter widget key
+
+FriendsPosts Methods
+^^^^^^^^^^^^^^^^^^^
+.. list-table::
+   :widths: 25 75
+   :header-rows: 1
+
+   * - Method
+     - Description
+   * - openWorkoutModal()
+     - Shows workout details
+   * - openProfileModal()
+     - Shows friend's profile
+   * - build()
+     - Renders posts list
+
+UI Structure
+-----------
+
+Streak Banner
+^^^^^^^^^^^^^
+Contains:
+1. Streak counter (🔥 70 - hardcoded)
+2. "Log Workout" button
+3. Circular progress indicator (4/5 hardcoded)
+
+Recent Activity Section
+^^^^^^^^^^^^^^^^^^^^^^
+1. Section header ("Recent Activity")
+2. FriendsPosts list showing:
+   - Friend's profile image (clickable)
+   - Username (clickable)
+   - Post date
+   - Workout caption
+   - Like/comment buttons
+   - "View Workout" button
+
+Data Structure
+-------------
+
+Workout Post Data
+^^^^^^^^^^^^^^^^
+.. list-table::
+   :widths: 20 30 50
+   :header-rows: 1
+
+   * - Key
+     - Type
+     - Description
+   * - user_ID
+     - int
+     - Friend's user ID
+   * - user_profile_photo
+     - String
+     - Profile image name
+   * - user_name
+     - String
+     - Friend's username
+   * - workout_date_time
+     - DateTime
+     - Post timestamp
+   * - workout_caption
+     - String
+     - Workout description
+   * - hasLiked
+     - bool
+     - Current user's like status
+   * - total_likes
+     - int
+     - Like count
+   * - total_comments
+     - int
+     - Comment count
+   * - workout_ID
+     - int
+     - Unique workout ID
+
+State Management
+---------------
+- Uses Riverpod's ConsumerStatefulWidget
+- Watches ``postNotifier`` for friends' workouts
+- Manages modal states internally
+
+Dependencies
+-----------
+- flutter/material.dart
+- flutter_riverpod
+- percent_indicator (for circular progress)
+- intl (for date formatting)
+- fitness_app backend providers/models
+- show_workout_modal.dart
+- log_workout_modal.dart
+- show_profile_modal.dart
+
+Image Assets
+-----------
+From ``assets/`` directory:
+- [user_profile_photo].png (dynamic based on friend data)
+
+Interactions
+-----------
+1. Clicking profile image/username:
+   - Opens friend's profile (``ViewingProfilePage``)
+
+2. Clicking like icon:
+   - Toggles like status via ``postNotifier``
+
+3. Clicking comment icon:
+   - Opens workout details (``MyWorkoutPage``)
+
+4. Clicking "View Workout":
+   - Opens workout details (``MyWorkoutPage``)
+
+5. Clicking "Log Workout":
+   - Opens workout logging (``LogWorkoutPage``)
 
 Image Reference
 ------------------
 .. image:: ../_static/home_page.png
    :width: 400px
    :align: center
-
