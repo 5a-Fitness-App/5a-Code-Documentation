@@ -160,14 +160,6 @@ Workout Post Data
      - int
      - Unique workout identifier
 
-Dependencies (From Imports)
----------------------------
-- flutter/material.dart
-- flutter_riverpod
-- intl (for date formatting)
-- fitness_app backend providers and models
-- show_friend_modal.dart
-- show_workout_modal.dart
 
 Asset References
 ---------------

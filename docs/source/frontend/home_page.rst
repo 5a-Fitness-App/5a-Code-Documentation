@@ -6,10 +6,6 @@ Home Page
 
 Source File:  ``flutter/lib/frontend/states/home_page.dart``
 
-The Home Page is the main page the user will enter after logging in/ signing up. 
-It will display the user's fitness progress, including daily streak goals, workout logging options, and recent activity posts from other users.
-
-
 Overview
 --------
 The Home Page is the main page the user will enter after logging in/ signing up. 
@@ -51,20 +47,6 @@ HomePageState Methods
      - Shows workout logging bottom sheet
    * - _buildStreakBanner()
      - Builds the top progress display
-
-FriendsPosts Widget
-^^^^^^^^^^^^^^^^^^
-.. list-table::
-   :widths: 20 30 50
-   :header-rows: 1
-
-   * - Property
-     - Description
-   * - workouts
-     - List<Map<String,dynamic>>
-     - Friends' workout data to display
-   * - key
-     - Standard Flutter widget key
 
 FriendsPosts Methods
 ^^^^^^^^^^^^^^^^^^^
@@ -148,16 +130,6 @@ State Management
 - Watches ``postNotifier`` for friends' workouts
 - Manages modal states internally
 
-Dependencies
------------
-- flutter/material.dart
-- flutter_riverpod
-- percent_indicator (for circular progress)
-- intl (for date formatting)
-- fitness_app backend providers/models
-- show_workout_modal.dart
-- log_workout_modal.dart
-- show_profile_modal.dart
 
 Image Assets
 -----------
