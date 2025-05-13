@@ -90,44 +90,25 @@ Methods
    * - buildSignUpForm()
      - Returns registration form widget
 
-Form Validation 
---------------------------------------
+
 
 Sign In Form
-^^^^^^^^^^^^
-.. list-table::
-   :widths: 30 70
-   :header-rows: 1
+------------
+**Fields:**
+- Email (required, valid format)
+- Password (required, toggle visibility)
 
-   * - Field
-     - Validation
-   * - Email
-     | - Required
-     | - Must match regex:
-     |   ``r'^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$'``
-   * - Password
-     - Required
+
 
 Sign Up Form
-^^^^^^^^^^^^
-.. list-table::
-   :widths: 30 70
-   :header-rows: 1
-
-   * - Field
-     - Validation
-   * - Username
-     | - Required
-     | - Regex: ``r'^[a-zA-Z0-9._-]+$'``
-   * - Email
-     | - Same as login
-   * - Password
-     - Required
-   * - Confirm Password
-     - Must match password
-   * - Weight
-     | - Required
-     | - Valid decimal (regex: ``r'^\d*\.?\d*$'``)
+------------
+**Fields:**
+- Profile Image (fish/shark/crab/dolphin)
+- Username (required, alphanumeric)
+- Email (same as sign-in)
+- Password + Confirm (must match)
+- Birthday (date picker)
+- Weight + Unit (kg/lb)
 
 UI Structure (From build() method)
 ---------------------------------
