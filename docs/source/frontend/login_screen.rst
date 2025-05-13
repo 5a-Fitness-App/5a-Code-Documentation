@@ -20,7 +20,7 @@ Widget Hierarchy
     - Various form fields
     - Profile image selectors
 
-Exact Components from File
+ Components
 -------------------------
 
 WeightUnitsLabel Enum
@@ -69,7 +69,7 @@ LoginScreenState Properties
      - bool
      - Toggles between forms (default: false)
 
-Exact Methods from File
+ Methods 
 ^^^^^^^^^^^^^^^^^^^^^^^
 .. list-table::
    :widths: 25 75
@@ -90,7 +90,7 @@ Exact Methods from File
    * - buildSignUpForm()
      - Returns registration form widget
 
-Form Validation (Exact Rules from File)
+Form Validation 
 --------------------------------------
 
 Sign In Form
