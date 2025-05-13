@@ -88,7 +88,6 @@ FriendRequestWidget Properties
      - Refresh trigger after state changes
 
 
-*Properties* 
 - friend (Map<String, dynamic>): Friend data including:
    - .. int: user_ID: Friend's userID
  - When the user taps on 'friends' underneath their usrname on the profile page it will bring up a bottom sheet modal showing their friend request and friends
