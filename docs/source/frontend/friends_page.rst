@@ -1,7 +1,7 @@
 Friends Page
 ======================
 
-**File:** flutter/lib/frontend/modal/show_friends_modal.dart
+Source File: ``flutter/lib/frontend/modal/show_friends_modal.dart``
 
 Overview
 ----------
@@ -68,7 +68,7 @@ FriendWidget
 - Displays an individual friend in the friends list
 - Displays their profile photo and username, which can be clicked to bring up their profile page as a bottom sheet modal
 
-Properties
+FriendRequestWidget Properties
 ~~~~~~~~~~~~~~~~~~~~
 .. list-table::
    :widths: 20 30 50
@@ -87,23 +87,6 @@ Properties
      - ``VoidCallback``
      - Refresh trigger after state changes
 
-Methods
-~~~~~~~
-.. method:: openProfileModal(BuildContext context, int userID)
-   :noindex:
-   
-   Displays the user profile in a bottom sheet modal
-
-FriendRequestWidget
-^^^^^^^^^^^^^^^^^^^
-Displays an individual pending friend request.
-
-Properties
-~~~~~~~~~~~~~~~~~~~~
-State Management
-~~~~~~~~~~~~~~~~~~~~
-Key Features
-~~~~~~~~~~~~~~~~~~~~
 
 *Properties* 
 - friend (Map<String, dynamic>): Friend data including:
@@ -113,6 +96,13 @@ Key Features
  - Provider is used to fetch the list of friends
  - View friends' profile using action button for each friend
  - Accept or decline Friend requests 
+
+Methods
+~~~~~~~
+.. method:: openProfileModal(BuildContext context, int userID)
+   :noindex:
+   
+   Displays the user profile in a bottom sheet modal
 
 
 Image Reference

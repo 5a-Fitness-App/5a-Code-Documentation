@@ -3,7 +3,7 @@
 Profile Page
 ============
 
-Source File: ``profile_page.dart``
+Source File: ``flutter/lib/frontend/states/profile_page.dart``
 
 Widget Hierarchy
 ---------------
