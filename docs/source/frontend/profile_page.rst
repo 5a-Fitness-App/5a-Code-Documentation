@@ -184,3 +184,11 @@ Modal Components
 2. Workout Modal
    - Triggered by "View Workout" button
    - Shows ``MyWorkoutPage`` from ``show_workout_modal.dart``
+
+
+
+Image Reference
+-----------------
+.. image:: ../_static/profile_page.png
+   :width: 400px
+   :align: center

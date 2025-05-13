@@ -148,3 +148,12 @@ Validation Rules
 |                | - Must be in past                             |
 +----------------+-----------------------------------------------+
 
+Image References
+-----------------
+.. image:: ../_static/login_screen_registration.png
+   :width: 400px
+   :align: center
+
+.. image:: ../_static/login_screen_sign_in.png
+   :width: 400px
+   :align: center
