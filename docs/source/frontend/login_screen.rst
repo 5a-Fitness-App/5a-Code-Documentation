@@ -1,3 +1,5 @@
+.. _login-screen:
+
 Login Screen
 ============
 
@@ -10,8 +12,6 @@ Overview:
 This screen is used to authenticate credentials when signing in. 
 It is the main screen when you open the app and are required to either sign up or sign in.
 
-
-
 Widget Hierarchy
 ---------------
 - ``LoginScreen`` (ConsumerStatefulWidget)
@@ -20,7 +20,7 @@ Widget Hierarchy
     - Various form fields
     - Profile image selectors
 
- Components
+Components
 -------------------------
 
 WeightUnitsLabel Enum
@@ -69,7 +69,7 @@ LoginScreenState Properties
      - bool
      - Toggles between forms (default: false)
 
- Methods 
+Methods 
 ^^^^^^^^^^^^^^^^^^^^^^^
 .. list-table::
    :widths: 25 75
@@ -94,7 +94,7 @@ Form Validation
 --------------------------------------
 
 Sign In Form
--------------
+^^^^^^^^^^^^
 .. list-table::
    :widths: 30 70
    :header-rows: 1
@@ -109,7 +109,7 @@ Sign In Form
      - Required
 
 Sign Up Form
--------------
+^^^^^^^^^^^^
 .. list-table::
    :widths: 30 70
    :header-rows: 1
