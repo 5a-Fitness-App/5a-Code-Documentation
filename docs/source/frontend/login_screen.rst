@@ -94,7 +94,7 @@ Form Validation
 --------------------------------------
 
 Sign In Form
-^^^^^^^^^^^^
+-------------
 .. list-table::
    :widths: 30 70
    :header-rows: 1
@@ -109,7 +109,7 @@ Sign In Form
      - Required
 
 Sign Up Form
-^^^^^^^^^^^^
+-------------
 .. list-table::
    :widths: 30 70
    :header-rows: 1
