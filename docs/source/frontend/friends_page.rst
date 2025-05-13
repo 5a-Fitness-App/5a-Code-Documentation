@@ -5,31 +5,63 @@ Friends Page
 
 Overview
 ----------
-The FriendsPage is a Flutter widget that displays a user's friends list and friend requests. It provides functionality to manage friendships including accepting/declining requests and removing friends.
+The FriendsPage is a Flutter widget that displays and manages the user's social connection, including:
+
+- Current friends list
+- Pending friend requests
+- Friend management actions (accept/decline/remove)
+
+UI Structure
+------------
+1. **Header Section**
+   - Back button
+   - "Friends" title
+
+2. **Requests Section**
+   - Section header
+   - List of ``FriendRequestWidget`` instances
+
+3. **Friends Section** 
+   - Section header
+   - List of ``FriendWidget`` instances
 
 Components
 -----------
 FriendsPage
 ^^^^^^^^^^^
-- The main widget that displays both friend requests and friends list
+The main container widget that displays both friend requests and friends list
 
 Properties
 ~~~~~~~~~~~~~~~~~~~~
-.. int:: userID
-   - The ID of the currently logged in user, provided by userProvider.dart
+.. list-table::
+   :widths: 20 80
+   :header-rows: 1
+
+   * - Property
+     - Description
+   * - ``userID`` (int)
+     - The ID of the currently logged in user, provided by ``userProvider.dart``
 
 State Management
 ~~~~~~~~~~~~~~~~~~~~
 - Uses Riverpod's ConsumerStatefulWidget for state management 
 - Maintains two futures:
-   .. : friends: A list of current friends
-   .. : friendRequests: List of pending friend requests
+   .. list-table::
+     :widths: 30 70
+     
+     * - Future
+       - Description
+     * - ``friends``
+       - List of current friends (``List<Map<String, dynamic>>``)
+     * - ``friendRequests`` 
+       - List of pending requests (``List<Map<String, dynamic>>``)
 
 Key Features
 ~~~~~~~~~~~~~~~~~~~~
-- Displays friend requests at the top 
-- Shows friends list underneath
-- Handles loading states
+- Two-section layout (requests above, friends below)
+- Dynamic data refreshing
+- Loading state handling
+- Error states for API failures
 
 FriendWidget
 ^^^^^^^^^^^^^^^^^^
@@ -38,13 +70,34 @@ FriendWidget
 
 Properties
 ~~~~~~~~~~~~~~~~~~~~
-State Management
-~~~~~~~~~~~~~~~~~~~~
-Key Features
-~~~~~~~~~~~~~~~~~~~~
+.. list-table::
+   :widths: 20 30 50
+   :header-rows: 1
 
-Widget
-^^^^^^^^^^^^^^^^^^
+   * - Name
+     - Type
+     - Description
+   * - ``friend``
+     - ``Map<String, dynamic>``
+     - Contains friend data with keys:
+       - ``user_ID`` (int)
+       - ``user_name`` (String)
+       - ``user_profile_photo`` (String)
+   * - ``onResponse``
+     - ``VoidCallback``
+     - Refresh trigger after state changes
+
+Methods
+~~~~~~~
+.. method:: openProfileModal(BuildContext context, int userID)
+   :noindex:
+   
+   Displays the user profile in a bottom sheet modal
+
+FriendRequestWidget
+^^^^^^^^^^^^^^^^^^^
+Displays an individual pending friend request.
+
 Properties
 ~~~~~~~~~~~~~~~~~~~~
 State Management
