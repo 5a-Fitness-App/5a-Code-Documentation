@@ -8,7 +8,22 @@ It will display the user's fitness progress, including daily streak goals, worko
 
 Components
 ----------
-
+Widget
+^^^^^^^^^^^^^^^^^^
+Properties
+~~~~~~~~~~~~~~~~~~~~
+State Management
+~~~~~~~~~~~~~~~~~~~~
+Key Features
+~~~~~~~~~~~~~~~~~~~~
+Widget
+^^^^^^^^^^^^^^^^^^
+Properties
+~~~~~~~~~~~~~~~~~~~~
+State Management
+~~~~~~~~~~~~~~~~~~~~
+Key Features
+~~~~~~~~~~~~~~~~~~~~
 - **Streak Section (Hard Coded):** Displays a circular progress indicator at the top of the page, showing the percentage of daily goals met using `CircularPercentIndicator`.
     - If this section was fully functional: 
         - The Streak is updated daily as long as the user maintains their activity on the app

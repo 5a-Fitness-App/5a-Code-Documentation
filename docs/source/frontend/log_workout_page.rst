@@ -18,6 +18,19 @@ Fields
     - Reps
     - All activties have a 'notes' field
 
+
+Components
+------------
+
+Widget
+^^^^^^^^^^^^^^^^^^
+Properties
+~~~~~~~~~~~~~~~~~~~~
+State Management
+~~~~~~~~~~~~~~~~~~~~
+Key Features
+~~~~~~~~~~~~~~~~~~~~
+
 Functionality
 -------------
 
