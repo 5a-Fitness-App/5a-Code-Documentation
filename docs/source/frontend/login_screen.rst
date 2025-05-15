@@ -3,28 +3,60 @@
 Login Screen
 ============
 
-**File:** `flutter/lib/frontend/states/login_screen.dart`
+**Source File:** ``flutter/lib/frontend/states/login_screen.dart``
 
+Overview
+--------
+The Login Screen is the entry point for users to authenticate with the app. It provides both **Sign In** and **Sign Up** functionality in a dynamic UI with toggles. It also allows users to choose a profile image and input personal details like birthday and weight.
 
+UI Structure
+------------
+1. **Header**
+   - Gradient background with app logo
+2. **Toggle Buttons**
+   - Buttons to switch between "Sign In" and "Sign Up"
+3. **Form Area**
+   - Renders either the Sign In or Sign Up form based on mode
+4. **Submit Button**
+   - Triggers login or registration flow
 
-Overview: 
----------
-This screen is used to authenticate credentials when signing in. 
-It is the main screen when you open the app and are required to either sign up or sign in.
+Sign In Form
+------------
+**Fields:**
+- Email (required, valid format)
+- Password (required, toggle visibility)
 
-Widget Hierarchy
----------------
-- ``LoginScreen`` (ConsumerStatefulWidget)
-  - ``LoginScreenState`` (ConsumerState)
-    - Form (Sign In/Sign Up)
-    - Various form fields
-    - Profile image selectors
+Sign Up Form
+------------
+**Fields:**
+- Profile Image (fish, shark, crab, dolphin)
+- Username (required, alphanumeric)
+- Email (same as Sign In)
+- Password + Confirm (must match)
+- Birthday (date picker)
+- Weight + Unit (kg/lb)
+
+Validation Rules
+----------------
++--------------+--------------------------------------------+
+| Field        | Validation                                 |
++==============+============================================+
+| Email        | Required, valid format                     |
++--------------+--------------------------------------------+
+| Password     | Required, min. 8 characters                |
++--------------+--------------------------------------------+
+| Username     | Required, alphanumeric with _ or .         |
++--------------+--------------------------------------------+
+| Weight       | Required, valid decimal number             |
++--------------+--------------------------------------------+
+| Birthday     | Required, must be a past date              |
++--------------+--------------------------------------------+
 
 Components
--------------------------
+----------
 
 WeightUnitsLabel Enum
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 .. list-table::
    :widths: 30 70
    :header-rows: 1
@@ -37,7 +69,7 @@ WeightUnitsLabel Enum
      - "lb"
 
 LoginScreen Class
-^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^
 .. list-table::
    :widths: 30 70
    :header-rows: 1
@@ -45,12 +77,12 @@ LoginScreen Class
    * - Property
      - Description
    * - registerOverride
-     - Optional function override for registration
+     - Optional override for custom registration flow
 
 LoginScreenState Properties
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. list-table::
-   :widths: 20 30 50
+   :widths: 30 70
    :header-rows: 1
 
    * - Name
@@ -61,95 +93,46 @@ LoginScreenState Properties
      - Form validation key
    * - emailController
      - TextEditingController
-     - Email input controller
+     - Controls email input
    * - selectedProfileImage
      - String
-     - Currently selected image (default: 'fish')
+     - Stores profile avatar image name
    * - registrationMode
      - bool
-     - Toggles between forms (default: false)
+     - Switches between sign-in/sign-up modes
 
-Methods 
-^^^^^^^^^^^^^^^^^^^^^^^
+Methods
+-------
 .. list-table::
-   :widths: 25 75
+   :widths: 30 70
    :header-rows: 1
 
    * - Method
      - Description
    * - _selectImage()
-     - Sets profile image
+     - Opens image picker and updates selection
    * - _selectDate()
-     - Shows date picker
+     - Displays date picker for birthday
    * - login()
-     - Handles sign-in
+     - Handles sign-in submission
    * - registerButton()
-     - Handles registration
+     - Handles registration submission
    * - buildSignInForm()
-     - Returns login form widget
+     - Builds and returns login form
    * - buildSignUpForm()
-     - Returns registration form widget
-
-
-
-Sign In Form
-------------
-**Fields:**
-- Email (required, valid format)
-- Password (required, toggle visibility)
-
-
-
-Sign Up Form
-------------
-**Fields:**
-- Profile Image (fish/shark/crab/dolphin)
-- Username (required, alphanumeric)
-- Email (same as sign-in)
-- Password + Confirm (must match)
-- Birthday (date picker)
-- Weight + Unit (kg/lb)
-
-UI Structure (From build() method)
----------------------------------
-1. Gradient header with logo
-2. Form toggle buttons
-3. Dynamic form area showing either:
-   - Sign In form (email + password)
-   - Sign Up form (all fields + profile images)
+     - Builds and returns registration form
 
 Image Assets Used
-----------------
+-----------------
 From ``assets/`` directory:
-- Logo.png
+- logo.png
 - fish.png
 - shark.png
 - crab.png
 - dolphin.png
 
-Validation Rules
----------------
-+----------------+-----------------------------------------------+
-| Field          | Validation Criteria                           |
-+================+===============================================+
-| Email          | - Required                                    |
-|                | - Valid email format                          |
-+----------------+-----------------------------------------------+
-| Password       | - Required                                    |
-|                | - Minimum 8 characters                        |
-+----------------+-----------------------------------------------+
-| Username       | - Required                                    |
-|                | - Alphanumeric with underscores/dots          |
-+----------------+-----------------------------------------------+
-| Weight         | - Required                                    |
-|                | - Valid decimal number                        |
-+----------------+-----------------------------------------------+
-| Birthday       | - Required                                    |
-|                | - Must be in past                             |
-+----------------+-----------------------------------------------+
-
 Image References
------------------
+----------------
 .. image:: ../_static/login_screen_registration2.png
    :width: 400px
    :align: center

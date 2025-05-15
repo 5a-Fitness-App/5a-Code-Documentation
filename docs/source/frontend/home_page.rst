@@ -1,6 +1,5 @@
 .. _home-page:
 
-
 Home Page
 =========
 
@@ -8,12 +7,31 @@ Source File:  ``flutter/lib/frontend/states/home_page.dart``
 
 Overview
 --------
-The Home Page is the main page the user will enter after logging in/ signing up. 
+The Home Page is the main page the user will enter after logging in/signing up. 
 It will display the user's fitness progress, including daily streak goals, workout logging options, and recent activity posts from other users.
 
+UI Structure
+------------
+Streak Banner
+^^^^^^^^^^^^^
+Contains:
+1. Streak counter (🔥 70 - hardcoded)
+2. "Log Workout" button
+3. Circular progress indicator (4/5 hardcoded)
+
+Recent Activity Section
+^^^^^^^^^^^^^^^^^^^^^^^
+1. Section header ("Recent Activity")
+2. FriendsPosts list showing:
+   - Friend's profile image (clickable)
+   - Username (clickable)
+   - Post date
+   - Workout caption
+   - Like/comment buttons
+   - "View Workout" button
 
 Widget Hierarchy
----------------
+----------------
 - ``HomePage`` (ConsumerStatefulWidget)
   - ``_HomePageState`` (ConsumerState)
     - ``_buildStreakBanner()``
@@ -21,7 +39,6 @@ Widget Hierarchy
 
 Components
 ----------
-
 HomePage Class
 ^^^^^^^^^^^^^^
 .. list-table::
@@ -34,7 +51,7 @@ HomePage Class
      - Standard Flutter widget key
 
 HomePageState Methods
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 .. list-table::
    :widths: 25 75
    :header-rows: 1
@@ -49,7 +66,7 @@ HomePageState Methods
      - Builds the top progress display
 
 FriendsPosts Methods
-^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
 .. list-table::
    :widths: 25 75
    :header-rows: 1
@@ -63,32 +80,10 @@ FriendsPosts Methods
    * - build()
      - Renders posts list
 
-UI Structure
------------
-
-Streak Banner
-^^^^^^^^^^^^^
-Contains:
-1. Streak counter (🔥 70 - hardcoded)
-2. "Log Workout" button
-3. Circular progress indicator (4/5 hardcoded)
-
-Recent Activity Section
-^^^^^^^^^^^^^^^^^^^^^^
-1. Section header ("Recent Activity")
-2. FriendsPosts list showing:
-   - Friend's profile image (clickable)
-   - Username (clickable)
-   - Post date
-   - Workout caption
-   - Like/comment buttons
-   - "View Workout" button
-
 Data Structure
--------------
-
+--------------
 Workout Post Data
-^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^
 .. list-table::
    :widths: 20 30 50
    :header-rows: 1
@@ -125,36 +120,26 @@ Workout Post Data
      - Unique workout ID
 
 State Management
----------------
+----------------
 - Uses Riverpod's ConsumerStatefulWidget
 - Watches ``postNotifier`` for friends' workouts
 - Manages modal states internally
 
+Interactions
+------------
+1. Clicking profile image/username: opens friend’s profile (``ViewingProfilePage``)
+2. Clicking like icon: toggles like status
+3. Clicking comment icon: opens workout details
+4. Clicking "View Workout": opens workout details
+5. Clicking "Log Workout": opens workout logging page
 
 Image Assets
------------
+------------
 From ``assets/`` directory:
 - [user_profile_photo].png (dynamic based on friend data)
 
-Interactions
------------
-1. Clicking profile image/username:
-   - Opens friend's profile (``ViewingProfilePage``)
-
-2. Clicking like icon:
-   - Toggles like status via ``postNotifier``
-
-3. Clicking comment icon:
-   - Opens workout details (``MyWorkoutPage``)
-
-4. Clicking "View Workout":
-   - Opens workout details (``MyWorkoutPage``)
-
-5. Clicking "Log Workout":
-   - Opens workout logging (``LogWorkoutPage``)
-
 Image Reference
-------------------
+---------------
 .. image:: ../_static/home_page.png
    :width: 400px
    :align: center
