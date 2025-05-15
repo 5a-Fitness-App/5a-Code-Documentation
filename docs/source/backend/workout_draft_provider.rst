@@ -159,14 +159,14 @@ WorkoutDraft Notifier Class
 
 
 Dependencies
-============
+--------------
 
 - Uses :class:`userNotifier` to get current user ID
 - Relies on backend API function:
   - :func:`addWorkout`
 
 Example Usage
-=============
+--------------
 
 .. code-block:: dart
 

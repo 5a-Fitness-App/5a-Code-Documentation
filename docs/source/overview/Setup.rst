@@ -18,10 +18,10 @@ Setup
 
 3. Once the database is created, you are ready to run the flutter app. Ensure that you change the following:
     a. In the file lib/main.dart, change localhost to the appropriate host id 
-        .. code-block:: sql
+        .. code-block:: dart
             await dbService.init('localhost'); // TODO: '10.0.2.2' only works for android studio emulator, use 'localhost' for Xcode
     b. In the file 'lib/services/dbService.dart', change the connection details to your psql details
-        .. code-block:: sql
+        .. code-block:: dart
             connection = await Connection.open(
                 Endpoint(
                     host: host, // TODO: change the host id in main.dart
