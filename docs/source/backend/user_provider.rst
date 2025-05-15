@@ -1,13 +1,16 @@
 User Provider
 ====================
 
+**File**: flutter/lib/backend/models/user.dart
 
 User Model
------------
+-------------
+
 This model stores the logged in user's data for sharing the users data across the app's states
 
 User Class
 ~~~~~~~~~~~~~~~~~~~~
+
 .. class:: User
 
    Represents a registered user with personal and account-related information.
@@ -39,3 +42,96 @@ User Class
       :param accountCreationDate: (optional) New account creation date
       :param userEmail: (optional) New email
       :param friendCount: (optional) New friend count
+
+User Notifier Class
+~~~~~~~~~~~~~~~~~~~~
+
+.. class:: UserNotifier
+
+   Handles user authentication, profile management, and account operations.
+
+   **Constructor Parameters**:
+
+   - **ref** (*Ref*): A reference to the provider container.
+
+   **Initial State**: 
+   - Default User object with current DateTime for accountCreationDate and userDOB
+
+   .. method:: login(email, password)
+
+      Authenticates a user with email and password.
+
+      :param email: User's email address
+      :param password: User's password
+      :return: String? (error message) or null on success
+
+      **Workflow**:
+      1. Verifies email exists in database
+      2. Compares provided password with stored password
+      3. On success, loads complete user profile
+      4. Updates application state with user data
+
+   .. method:: updateFriendCount()
+
+      Updates the friend count for the current user.
+
+      **Workflow**:
+      1. Fetches current friend count from database
+      2. Updates user state
+      3. Refreshes both workout post lists
+
+   .. method:: logOut()
+
+      Logs out the current user by resetting all user data to default values.
+
+   .. method:: deleteUserAccount()
+
+      Permanently deletes the user account and resets application state.
+
+      **Workflow**:
+      1. Calls API to delete account from database
+      2. Resets all user data to default values
+
+User Model Structure
+====================
+
+The provider maintains these user properties:
+- userID
+- userName
+- userEmail
+- userProfilePhoto
+- userBio
+- userDOB
+- userWeight
+- userUnits (weight measurement)
+- accountCreationDate
+- friendCount
+
+Dependencies
+============
+
+- Uses :class:`postNotifier` to refresh workout posts
+- Relies on backend services:
+  - :class:`dbService` for database queries
+  - :func:`getFriendCount`
+  - :func:`deleteAccount`
+
+Example Usage
+=============
+
+.. code-block:: dart
+
+   // Watch the user state
+   final user = ref.watch(userNotifier);
+   
+   // Perform login
+   final error = await ref.read(userNotifier.notifier).login(email, password);
+   if (error != null) {
+     // Handle login error
+   }
+   
+   // Update friend count
+   ref.read(userNotifier.notifier).updateFriendCount();
+   
+   // Logout
+   ref.read(userNotifier.notifier).logOut();
