@@ -93,7 +93,7 @@ User Notifier Class
       2. Resets all user data to default values
 
 User Model Structure
-====================
+--------------
 
 The provider maintains these user properties:
 - userID
@@ -108,7 +108,7 @@ The provider maintains these user properties:
 - friendCount
 
 Dependencies
-============
+--------------
 
 - Uses :class:`postNotifier` to refresh workout posts
 - Relies on backend services:
@@ -117,7 +117,7 @@ Dependencies
   - :func:`deleteAccount`
 
 Example Usage
-=============
+--------------
 
 .. code-block:: dart
 
