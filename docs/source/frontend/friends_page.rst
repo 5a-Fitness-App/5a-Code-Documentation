@@ -1,116 +1,79 @@
+.. _friends-page:
+
 Friends Page
 ============
 
-Source File: ``flutter/lib/frontend/modal/show_friends_modal.dart``
+**Source File:** ``flutter/lib/frontend/modal/show_friends_modal.dart``
 
 Overview
 --------
-The FriendsPage is a Flutter widget that displays and manages the user's social connection, including:
-
-- Current friends list
-- Pending friend requests
-- Friend management actions (accept/decline/remove)
+The Friends Page is a modal page that allows users to view and manage their social connections. It displays pending friend requests and the current friends list, and provides options to accept, reject, or remove connections.
 
 UI Structure
 ------------
-1. **Header Section**
+1. **Header**
    - Back button
-   - "Friends" title
+   - Page title: "Friends"
+2. **Friend Requests Section**
+   - Header: "Friend Requests"
+   - List of `FriendRequestWidget` items, each with:
+     - Avatar
+     - Username
+     - Accept and decline buttons
+3. **Friends List Section**
+   - Header: "Your Friends"
+   - List of `FriendWidget` items, each with:
+     - Avatar
+     - Username
+     - "Remove Friend" button
 
-2. **Requests Section**
-   - Section header
-   - List of ``FriendRequestWidget`` instances
-
-3. **Friends Section**
-   - Section header
-   - List of ``FriendWidget`` instances
+Widget Hierarchy
+----------------
+- ``FriendsPage`` (ConsumerWidget)
+  - Builds the entire modal view
+  - Renders two lists (requests and current friends)
 
 Components
 ----------
 
-FriendsPage
-^^^^^^^^^^^
-The main container widget that displays both friend requests and friends list
+FriendRequestWidget
+^^^^^^^^^^^^^^^^^^^
+Represents a single pending friend request.
 
-Properties
-~~~~~~~~~~
-.. list-table::
-   :widths: 20 80
-   :header-rows: 1
-
-   * - Property
-     - Description
-   * - ``userID`` (int)
-     - The ID of the currently logged in user, provided by ``userProvider.dart``
-
-State Management
-~~~~~~~~~~~~~~~
-- Uses Riverpod's ConsumerStatefulWidget for state management
-- Maintains two futures:
-   .. list-table::
-     :widths: 30 70
-     
-     * - Future
-       - Description
-     * - ``friends``
-       - List of current friends (``List<Map<String, dynamic>>``)
-     * - ``friendRequests``
-       - List of pending requests (``List<Map<String, dynamic>>``)
-
-Key Features
-~~~~~~~~~~~~
-- Two-section layout (requests above, friends below)
-- Dynamic data refreshing
-- Loading state handling
-- Error states for API failures
+**UI Elements:**
+- Avatar (dynamic asset)
+- Username
+- Accept button
+- Decline button
 
 FriendWidget
 ^^^^^^^^^^^^
-- Displays an individual friend in the friends list
-- Displays their profile photo and username, which can be clicked to bring up their profile page as a bottom sheet modal
+Represents an existing friend connection.
 
-Properties
-~~~~~~~~~~
-.. list-table::
-   :widths: 20 30 50
-   :header-rows: 1
+**UI Elements:**
+- Avatar (dynamic asset)
+- Username
+- "Remove Friend" button
 
-   * - Name
-     - Type
-     - Description
-   * - ``friend``
-     - ``Map<String, dynamic>``
-     - Contains friend data with keys:
-       - ``user_ID`` (int)
-       - ``user_name`` (String)
-       - ``user_profile_photo`` (String)
-   * - ``onResponse``
-     - ``VoidCallback``
-     - Refresh trigger after state changes
+State Management
+----------------
+- Uses Riverpod `userNotifier` to access:
+  - `incomingFriendRequests`
+  - `friendUserData`
+- Uses methods from the notifier to:
+  - Accept/reject requests
+  - Remove friends
 
 Methods
-~~~~~~~
-.. method:: openProfileModal(BuildContext context, int userID)
-   :noindex:
-   
-   Displays the user profile in a bottom sheet modal
+-------
+- `acceptFriendRequest(friendID)`
+- `declineFriendRequest(friendID)`
+- `removeFriend(friendID)`
 
-FriendRequestWidget
-^^^^^^^^^^^^^^^^^^
-Displays an individual pending friend request.
 
-Properties
-~~~~~~~~~~
-- friend (Map<String, dynamic>): Friend data including:
-  - ``user_ID`` (int): Friend's userID
-- When the user taps on 'friends' underneath their username on the profile page it will bring up a bottom sheet modal showing their friend request and friends
-- 'showDialog' function is implemented to display the list of friends usernames
-- Provider is used to fetch the list of friends
-- View friends' profile using action button for each friend
-- Accept or decline Friend requests
 
 Image Reference
---------------
-.. image:: ../_static/show_friends_modal.png
+---------------
+.. image:: ../_static/friends_page.png
    :width: 400px
    :align: center
